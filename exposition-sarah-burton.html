@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exposition de Sarah Burton — Dialogues Silencieux chez White Cube.">
+    <title>Exposition de Sarah Burton — White Cube</title>
+    <link rel="stylesheet" href="CSS SITE INTERNET.css">
+</head>
+<body>
+
+    <header class="mobile-bar">
+        <button
+            class="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="expo-navigation"
+            type="button"
+        >☰</button>
+        <span>Maquette site web</span>
+    </header>
+
+    <main class="site">
+        <section class="expo-detail-page section-pad">
+            <nav class="nav">
+                <a class="brand" href="index.html#accueil">WHITE CUBE</a>
+                <div class="nav-links" id="expo-navigation">
+                    <a href="index.html#accueil">ACCUEIL</a>
+                    <a href="index.html#exposition">EXPOSITION</a>
+                    <a href="index.html#galerie">LA GALERIE</a>
+                    <a href="index.html#contact">CONTACT</a>
+                </div>
+                <span class="search" aria-hidden="true">⌕</span>
+            </nav>
+
+            <h1 class="expo-main-title">EXPOSITION DE SARAH BURTON</h1>
+
+            <div class="expo-detail-grid">
+                <div class="expo-visuals">
+                    <div class="framed-artwork">
+                        <img id="main-artwork-img" src="Unknown-1.jpeg" alt="Photographie South coast 2 — Sarah Burton">
+                    </div>
+
+                    <div class="artwork-thumbnails">
+                        <button type="button" class="thumb-btn active" onclick="changeArtwork('Unknown-1.jpeg', 'South coast 2 — Sarah Burton', this)">
+                            <img src="Unknown-1.jpeg" alt="Miniature South coast 2">
+                        </button>
+                        <button type="button" class="thumb-btn" onclick="changeArtwork('Unknown-2.jpeg', 'Unfurl — Sarah Burton', this)">
+                            <img src="Unknown-2.jpeg" alt="Miniature Unfurl">
+                        </button>
+                        <button type="button" class="thumb-btn" onclick="changeArtwork('Unknown-3.jpeg', 'Daybed — Sarah Burton', this)">
+                            <img src="Unknown-3.jpeg" alt="Miniature Daybed">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="expo-specs">
+                    <h2><strong>SARAH BURTON</strong> "Dialogues Silencieux"</h2>
+                    <p class="expo-dates">Du 01 Octobre au 28 Novembre</p>
+
+                    <p class="expo-desc">
+                        Une série exclusive explorant le dialogue entre silhouettes sculpturales et paysages arides.<br>
+                        Tirages limités à 30 exemplaires, numérotés et signés par l'artiste.
+                    </p>
+
+                    <ul class="expo-meta">
+                        <li><em>Format :</em> 80 × 120 cm</li>
+                        <li><em>Support :</em> Tirage pigmentaire Hahnemühle</li>
+                        <li><em>Prix :</em> 1 450 €</li>
+                    </ul>
+
+                    <a class="contact-gallery-link" href="index.html#contact">CONTACTER LA GALERIE <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function changeArtwork(imageSrc, altText, clickedBtn) {
+            const mainImg = document.getElementById('main-artwork-img');
+            mainImg.src = imageSrc;
+            mainImg.alt = altText;
+
+            document.querySelectorAll('.thumb-btn').forEach(btn => btn.classList.remove('active'));
+            clickedBtn.classList.add('active');
+        }
+
+        const navLinks = document.querySelector('#expo-navigation');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+            navLinks.classList.toggle('open', !isOpen);
+        });
+    </script>
+</body>
+</html>

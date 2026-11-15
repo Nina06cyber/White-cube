@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Réservation atelier du 18 Novembre chez White Cube.">
+    <title>Réservation Évènement 18 Novembre — White Cube</title>
+    <link rel="stylesheet" href="CSS SITE INTERNET.css">
+</head>
+<body>
+
+    <main class="site reservation-page">
+        <div class="reservation-top">
+            <a class="cancel-link" href="index.html">
+                <span aria-hidden="true">←</span> ANNULER
+            </a>
+        </div>
+
+        <h1 class="reservation-title">RÉSERVATION ÉVÈNEMENT</h1>
+
+        <div class="reservation-grid">
+            <div class="reservation-info">
+                <h2>18 Novembre 14h-18h</h2>
+                <p>
+                    Atelier pratique d'analyse d'images et cadrage minimaliste<br>
+                    Guidé par nos photographes invités de la saison.
+                </p>
+
+                <h3>Programme de la session :</h3>
+                <ul>
+                    <li>14h-15h30 : Déconstruction du regard et du vide</li>
+                    <li>15h30-17h : Prise de vue dirigée in situ</li>
+                    <li>17h-18h : Analyse croisée des tirages de travail</li>
+                </ul>
+
+                <p class="reservation-details">
+                    Tarif : 45 € (matériel inclus)<br>
+                    Lieu : Studio White Cube
+                </p>
+            </div>
+
+            <div class="reservation-card">
+                <h2>INSCRIPTION À L'ATELIER</h2>
+                <p class="spots-subtitle">Session limitée à 12 participants</p>
+
+                <form id="workshop-form" class="workshop-form" onsubmit="handleReservation(event)">
+                    <label for="res-name">Nom &amp; Prénom</label>
+                    <input id="res-name" name="name" type="text" required>
+
+                    <label for="res-email">Adresse e-mail</label>
+                    <input id="res-email" name="email" type="email" required>
+
+                    <label for="res-level">Niveau de pratique</label>
+                    <input id="res-level" name="level" type="text" required>
+
+                    <button type="submit" class="oval-button oval-submit-btn">VALIDER L'INSCRIPTION</button>
+                </form>
+
+                <p id="reservation-feedback" class="reservation-note">
+                    Un e-mail récapitulatif avec les consignes de préparation vous sera<br>
+                    • envoyé sous 24h.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function handleReservation(event) {
+            event.preventDefault();
+            const name = document.getElementById('res-name').value;
+            const feedback = document.getElementById('reservation-feedback');
+            feedback.innerHTML = `<strong>Merci ${name} !</strong> Votre pré-inscription pour le 18 Novembre est confirmée.<br>Un e-mail récapitulatif vous sera envoyé sous 24h.`;
+            document.getElementById('workshop-form').reset();
+        }
+    </script>
+</body>
+</html>
