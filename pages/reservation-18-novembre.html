@@ -3,74 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Réservation atelier du 18 Novembre chez White Cube.">
-    <title>Réservation Évènement 18 Novembre — White Cube</title>
-    <link rel="stylesheet" href="CSS SITE INTERNET.css">
+    <meta name="description" content="Réservation atelier du 18 novembre — White Cube.">
+    <title>Réservation du 18 novembre — White Cube</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-    <main class="site reservation-page">
-        <div class="reservation-top">
-            <a class="cancel-link" href="index.html">
-                <span aria-hidden="true">←</span> ANNULER
-            </a>
-        </div>
+    <header class="mobile-bar">
+        <button
+            class="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            type="button"
+        >☰</button>
+        <span>Réservation 18 novembre</span>
+    </header>
 
-        <h1 class="reservation-title">RÉSERVATION ÉVÈNEMENT</h1>
+    <main class="site">
 
-        <div class="reservation-grid">
-            <div class="reservation-info">
-                <h2>18 Novembre 14h-18h</h2>
-                <p>
-                    Atelier pratique d'analyse d'images et cadrage minimaliste<br>
-                    Guidé par nos photographes invités de la saison.
-                </p>
+        <section class="events section-pad" id="reservation">
+            <nav class="nav">
+                <a class="brand" href="../index.html">WHITE CUBE</a>
+                <div class="nav-links" id="primary-navigation">
+                    <a href="../index.html">ACCUEIL</a>
+                    <a href="exposition-sarah-burton.html">EXPOSITION</a>
+                    <a href="../index.html#galerie">LA GALERIE</a>
+                    <a href="../index.html#contact">CONTACT</a>
+                </div>
+                <span class="search" aria-hidden="true">⌕</span>
+            </nav>
 
-                <h3>Programme de la session :</h3>
-                <ul>
-                    <li>14h-15h30 : Déconstruction du regard et du vide</li>
-                    <li>15h30-17h : Prise de vue dirigée in situ</li>
-                    <li>17h-18h : Analyse croisée des tirages de travail</li>
-                </ul>
+            <h1>RÉSERVATION — ATELIER DU 18 NOVEMBRE</h1>
+            <p class="date-line">&nbsp;18 NOVEMBRE • 14H - 18H</p>
+            <p class="intro">
+                Atelier pratique d'analyse d'images et travail sur le cadrage minimaliste<br>
+                guidé par nos photographes invités. Places limitées.
+            </p>
 
-                <p class="reservation-details">
-                    Tarif : 45 € (matériel inclus)<br>
-                    Lieu : Studio White Cube
-                </p>
-            </div>
-
-            <div class="reservation-card">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Votre demande de réservation pour le 18 novembre a bien été prise en compte.');">
                 <h2>INSCRIPTION À L'ATELIER</h2>
-                <p class="spots-subtitle">Session limitée à 12 participants</p>
+                <label for="resa-name">Nom et prénom</label>
+                <input id="resa-name" name="name" type="text" autocomplete="name" placeholder="Ex. Camille Martin" required>
 
-                <form id="workshop-form" class="workshop-form" onsubmit="handleReservation(event)">
-                    <label for="res-name">Nom &amp; Prénom</label>
-                    <input id="res-name" name="name" type="text" required>
+                <label for="resa-email">Adresse e-mail</label>
+                <input id="resa-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr" required>
 
-                    <label for="res-email">Adresse e-mail</label>
-                    <input id="res-email" name="email" type="email" required>
+                <label for="resa-places">Nombre de places</label>
+                <input id="resa-places" name="places" type="number" min="1" max="4" value="1" required>
 
-                    <label for="res-level">Niveau de pratique</label>
-                    <input id="res-level" name="level" type="text" required>
+                <label for="resa-note">Remarque ou question</label>
+                <textarea id="resa-note" name="note" placeholder="Précisez si besoin votre pratique photographique" rows="3"></textarea>
 
-                    <button type="submit" class="oval-button oval-submit-btn">VALIDER L'INSCRIPTION</button>
-                </form>
+                <button type="submit">CONFIRMER L'INSCRIPTION</button>
+            </form>
 
-                <p id="reservation-feedback" class="reservation-note">
-                    Un e-mail récapitulatif avec les consignes de préparation vous sera<br>
-                    • envoyé sous 24h.
-                </p>
+            <a class="oval-button centered" href="../index.html">RETOUR À L'ACCUEIL</a>
+        </section>
+
+        <footer id="contact">
+            <nav class="nav compact">
+                <a class="brand" href="../index.html">WHITE CUBE</a>
+                <div class="nav-links">
+                    <a href="../index.html">ACCUEIL</a>
+                    <a href="exposition-sarah-burton.html">EXPOSITION</a>
+                    <a href="../index.html#galerie">LA GALERIE</a>
+                    <a href="../index.html#contact">CONTACT</a>
+                </div>
+                <span class="search" aria-hidden="true">⌕</span>
+            </nav>
+
+            <div class="contact-layout">
+                <div class="contact-copy">
+                    <h2>CONTACT &amp; ÉCHANGES</h2>
+                    <p>Entrer en dialogue.<br>Pour toute demande d'acquisition, proposition<br> artistique ou projet curatorial, écrivez-nous.</p>
+                    <p>
+                        Coordonnées directes :<br>
+                        contact@whitecube-digital.com<br>
+                        Adresse : 10 RUE DE LA REPUBLIQUE<br>
+                        75000 PARIS<br>
+                        Tel : 01.63.45.85.56<br>
+                        Fax : 01.63.45.78.52
+                    </p>
+                </div>
             </div>
-        </div>
+        </footer>
+
     </main>
 
     <script>
-        function handleReservation(event) {
-            event.preventDefault();
-            const name = document.getElementById('res-name').value;
-            const feedback = document.getElementById('reservation-feedback');
-            feedback.innerHTML = `<strong>Merci ${name} !</strong> Votre pré-inscription pour le 18 Novembre est confirmée.<br>Un e-mail récapitulatif vous sera envoyé sous 24h.`;
-            document.getElementById('workshop-form').reset();
+        const navLinks = document.querySelector('#primary-navigation');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', String(!isOpen));
+                menuToggle.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+                navLinks.classList.toggle('open', !isOpen);
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+                });
+            });
         }
     </script>
 </body>
