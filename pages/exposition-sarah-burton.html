@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exposition de Sarah Burton — Dialogues Silencieux chez White Cube.">
+    <meta name="description" content="Exposition de Sarah Burton — White Cube, galerie de photographie contemporaine.">
     <title>Exposition de Sarah Burton — White Cube</title>
-    <link rel="stylesheet" href="CSS SITE INTERNET.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -14,86 +14,120 @@
             class="menu-toggle"
             aria-label="Ouvrir le menu"
             aria-expanded="false"
-            aria-controls="expo-navigation"
+            aria-controls="primary-navigation"
             type="button"
         >☰</button>
-        <span>Maquette site web</span>
+        <span>Exposition Sarah Burton</span>
     </header>
 
     <main class="site">
-        <section class="expo-detail-page section-pad">
+
+        <section class="exhibition section-pad" id="top">
             <nav class="nav">
-                <a class="brand" href="index.html#accueil">WHITE CUBE</a>
-                <div class="nav-links" id="expo-navigation">
-                    <a href="index.html#accueil">ACCUEIL</a>
-                    <a href="index.html#exposition">EXPOSITION</a>
-                    <a href="index.html#galerie">LA GALERIE</a>
-                    <a href="index.html#contact">CONTACT</a>
+                <a class="brand" href="../index.html">WHITE CUBE</a>
+                <div class="nav-links" id="primary-navigation">
+                    <a href="../index.html">ACCUEIL</a>
+                    <a href="#oeuvres">EXPOSITION</a>
+                    <a href="../index.html#galerie">LA GALERIE</a>
+                    <a href="../index.html#contact">CONTACT</a>
                 </div>
                 <span class="search" aria-hidden="true">⌕</span>
             </nav>
 
-            <h1 class="expo-main-title">EXPOSITION DE SARAH BURTON</h1>
+            <div id="oeuvres">
+                <h1>EXPOSITION DE SARAH BURTON</h1>
+                <p class="date-line">&nbsp;DU 01 OCTOBRE AU 28 NOVEMBRE</p>
+                <p class="intro">
+                    Une série exclusive explorant le dialogue entre silhouettes sculpturales et paysages arides.<br>
+                    Tirages limités à 50 exemplaires, signés et numérotés par l'artiste.
+                </p>
 
-            <div class="expo-detail-grid">
-                <div class="expo-visuals">
-                    <div class="framed-artwork">
-                        <img id="main-artwork-img" src="Unknown-1.jpeg" alt="Photographie South coast 2 — Sarah Burton">
-                    </div>
-
-                    <div class="artwork-thumbnails">
-                        <button type="button" class="thumb-btn active" onclick="changeArtwork('Unknown-1.jpeg', 'South coast 2 — Sarah Burton', this)">
-                            <img src="Unknown-1.jpeg" alt="Miniature South coast 2">
-                        </button>
-                        <button type="button" class="thumb-btn" onclick="changeArtwork('Unknown-2.jpeg', 'Unfurl — Sarah Burton', this)">
-                            <img src="Unknown-2.jpeg" alt="Miniature Unfurl">
-                        </button>
-                        <button type="button" class="thumb-btn" onclick="changeArtwork('Unknown-3.jpeg', 'Daybed — Sarah Burton', this)">
-                            <img src="Unknown-3.jpeg" alt="Miniature Daybed">
-                        </button>
-                    </div>
+                <div class="artworks">
+                    <article>
+                        <img src="../images/Unknown-1.jpeg" alt="Photographie South coast 2 par Sarah Burton">
+                        <h3>South coast 2</h3>
+                    </article>
+                    <article>
+                        <img src="../images/Unknown-2.jpeg" alt="Photographie Unfurl par Sarah Burton">
+                        <h3>Unfurl</h3>
+                    </article>
+                    <article>
+                        <img src="../images/Unknown-3.jpeg" alt="Photographie Daybed par Sarah Burton">
+                        <h3>Daybed</h3>
+                    </article>
                 </div>
 
-                <div class="expo-specs">
-                    <h2><strong>SARAH BURTON</strong> "Dialogues Silencieux"</h2>
-                    <p class="expo-dates">Du 01 Octobre au 28 Novembre</p>
-
-                    <p class="expo-desc">
-                        Une série exclusive explorant le dialogue entre silhouettes sculpturales et paysages arides.<br>
-                        Tirages limités à 30 exemplaires, numérotés et signés par l'artiste.
-                    </p>
-
-                    <ul class="expo-meta">
-                        <li><em>Format :</em> 80 × 120 cm</li>
-                        <li><em>Support :</em> Tirage pigmentaire Hahnemühle</li>
-                        <li><em>Prix :</em> 1 450 €</li>
-                    </ul>
-
-                    <a class="contact-gallery-link" href="index.html#contact">CONTACTER LA GALERIE <span aria-hidden="true">→</span></a>
-                </div>
+                <a class="oval-button centered" href="../index.html#contact">DEMANDER UN DOSSIER D'ŒUVRES</a>
             </div>
         </section>
+
+        <footer id="contact">
+            <nav class="nav compact">
+                <a class="brand" href="../index.html">WHITE CUBE</a>
+                <div class="nav-links">
+                    <a href="../index.html">ACCUEIL</a>
+                    <a href="#oeuvres">EXPOSITION</a>
+                    <a href="../index.html#galerie">LA GALERIE</a>
+                    <a href="../index.html#contact">CONTACT</a>
+                </div>
+                <span class="search" aria-hidden="true">⌕</span>
+            </nav>
+
+            <div class="contact-layout">
+                <div class="contact-copy">
+                    <h2>CONTACT &amp; ÉCHANGES</h2>
+                    <p>Entrer en dialogue.<br>Pour toute demande d'acquisition, proposition<br> artistique ou projet curatorial, écrivez-nous.</p>
+                    <p>
+                        Coordonnées directes :<br>
+                        contact@whitecube-digital.com<br>
+                        Adresse : 10 RUE DE LA REPUBLIQUE<br>
+                        75000 PARIS<br>
+                        Tel : 01.63.45.85.56<br>
+                        Fax : 01.63.45.78.52
+                    </p>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci pour votre message !');">
+                    <h2>FORMULAIRE</h2>
+                    <label for="contact-name">Nom et prénom</label>
+                    <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Ex. Camille Martin" required>
+
+                    <label for="contact-email">Adresse e-mail</label>
+                    <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr" required>
+
+                    <label for="contact-subject">Objet du message</label>
+                    <input id="contact-subject" name="subject" type="text" placeholder="Exposition Sarah Burton">
+
+                    <label for="contact-message">Votre message</label>
+                    <textarea id="contact-message" name="message" placeholder="Écrivez votre message ici" rows="3" required></textarea>
+
+                    <button type="submit">ENVOYER</button>
+                </form>
+            </div>
+        </footer>
+
     </main>
 
     <script>
-        function changeArtwork(imageSrc, altText, clickedBtn) {
-            const mainImg = document.getElementById('main-artwork-img');
-            mainImg.src = imageSrc;
-            mainImg.alt = altText;
-
-            document.querySelectorAll('.thumb-btn').forEach(btn => btn.classList.remove('active'));
-            clickedBtn.classList.add('active');
-        }
-
-        const navLinks = document.querySelector('#expo-navigation');
+        const navLinks = document.querySelector('#primary-navigation');
         const menuToggle = document.querySelector('.menu-toggle');
 
-        menuToggle.addEventListener('click', () => {
-            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', String(!isOpen));
-            menuToggle.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
-            navLinks.classList.toggle('open', !isOpen);
-        });
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', String(!isOpen));
+                menuToggle.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+                navLinks.classList.toggle('open', !isOpen);
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+                });
+            });
+        }
     </script>
 </body>
 </html>
